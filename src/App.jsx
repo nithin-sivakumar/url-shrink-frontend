@@ -6,8 +6,9 @@ function App() {
   const [shrink, setShrink] = useState('');
   const [views, setViews] = useState(-1);
   const [shortId, setShortId] = useState('');
+  const [e, setE] = useState('');
 
-  const HOST = 'https://url-shrink-backend.vercel.app';
+  const HOST = 'https://reduceurl.vercel.app';
 
   const handleRedirect = (id) => {
     window.open(`${HOST}/u/${id}`, '_blank');
@@ -24,6 +25,7 @@ function App() {
       }
     } catch (error) {
       console.log(error);
+      setE(error.response.data.message);
     }
   };
 
@@ -36,6 +38,7 @@ function App() {
       }
     } catch (error) {
       console.log(error);
+      setE(error.response.data.message);
     }
   };
 
@@ -110,6 +113,7 @@ function App() {
           </button>
         </form>
         {views >= 0 && <p>Your URL has {views} views.</p>}
+        {e && <p className='bg-red-500 p-2 rounded-xl'>Error: {e}</p>}
       </div>
       <p className='absolute bottom-10'>
         Developed by{' '}
