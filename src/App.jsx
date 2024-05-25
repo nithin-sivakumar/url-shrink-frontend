@@ -72,6 +72,7 @@ function App() {
             <a
               className='p-2 rounded-lg font-semibold text-green-500 underline hover:bg-green-500 hover:text-black'
               href={shrink}
+              target='_blank'
             >
               {shrink}
             </a>
