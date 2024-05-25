@@ -103,6 +103,15 @@ function App() {
         </form>
         {views >= 0 && <p>Your URL has {views} views.</p>}
       </div>
+      <p className='absolute bottom-10'>
+        Developed by{' '}
+        <a
+          className='underline font-semibold underline-offset-4'
+          href='https://github.com/nithin-sivakumar'
+        >
+          Nithin Sivakumar
+        </a>
+      </p>
     </div>
   );
 }
