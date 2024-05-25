@@ -14,21 +14,28 @@ function App() {
   };
 
   const shrinkUrl = async () => {
-    const response = await axios.post(`${HOST}/new`, {
-      url: url
-    });
+    try {
+      const response = await axios.post(`${HOST}/new`, {
+        url: url
+      });
 
-    if (response.status === 200) {
-      setShrink(response.data.url);
+      if (response.status === 200) {
+        setShrink(response.data.url);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
   const getViews = async (id) => {
-    console.log(`Here: ${id}`);
-    const response = await axios.get(`${HOST}/info/${id}`);
-    console.log(response);
-    if (response.status === 200) {
-      setViews(response.data.views);
+    try {
+      const response = await axios.get(`${HOST}/info/${id}`);
+      console.log(response);
+      if (response.status === 200) {
+        setViews(response.data.views);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
