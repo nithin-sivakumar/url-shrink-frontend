@@ -14,17 +14,9 @@ function App() {
   };
 
   const shrinkUrl = async () => {
-    const response = await axios.post(
-      `${HOST}/new`,
-      {
-        url: url
-      },
-      {
-        headers: {
-          origin: HOST
-        }
-      }
-    );
+    const response = await axios.post(`${HOST}/new`, {
+      url: url
+    });
 
     if (response.status === 200) {
       setShrink(response.data.url);
