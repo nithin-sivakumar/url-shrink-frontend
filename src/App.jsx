@@ -7,7 +7,7 @@ function App() {
   const [views, setViews] = useState(-1);
   const [shortId, setShortId] = useState('');
 
-  const HOST = 'http://localhost:5000';
+  const HOST = 'https://url-shrink-backend.vercel.app';
 
   const handleRedirect = (id) => {
     window.open(`${HOST}/u/${id}`, '_blank');
